@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SprintFlow - Inicio</title>
+    <link rel="stylesheet" href="css/styles.css?v=3">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div>
+            <div class="brand">
+                <div class="brand-logo">
+                    <svg viewBox="0 0 48 48" width="44" height="44" fill="none">
+                        <path d="M10 10L22 24L10 38" stroke="#ffb02e" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M38 10L26 24L38 38" stroke="#ff6b1a" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="brand-name">Sprint<span>Flow</span></div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    Inicio
+                </a>
+                <a href="historias.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    Historias
+                </a>
+                <a href="sprints.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Sprints
+                </a>
+                <a href="informes.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    Informes
+                </a>
+            </nav>
+        </div>
+
+        <footer class="sidebar-footer">
+            <p class="footer-note">Gestor de Historias de Usuario</p>
+        </footer>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div class="page-title">
+                <h1>Bienvenido a <span>SprintFlow</span></h1>
+                <p>Plataforma ágil basada en arquitectura de microservicios.</p>
+            </div>
+            <div class="top-badges">
+                <span>Gestiona &bull; Organiza &bull; Avanza</span>
+                <span class="version-pill"><span class="version-dot"></span> v2.0 MS</span>
+            </div>
+        </header>
+
+        <section class="glass-panel">
+            <div class="panel-header">
+                <h2 class="panel-title">Panel Principal</h2>
+            </div>
+            <p class="welcome-text">
+                Desde aquí puedes navegar entre los diferentes módulos independientes de <strong>SprintFlow</strong>. Cada sección se comunica mediante peticiones asíncronas (<code>fetch</code>) con su respectivo microservicio REST en PHP.
+            </p>
+        </section>
+
+        <section class="home-grid">
+            <article class="glass-panel module-card">
+                <div>
+                    <h3>Historias de Usuario</h3>
+                    <p>Crea, filtra por sprint, edita y gestiona el estado y los story points de cada historia del backlog.</p>
+                </div>
+                <a href="historias.html" class="btn-primary">Ir a Historias</a>
+            </article>
+
+            <article class="glass-panel module-card">
+                <div>
+                    <h3>Gestión de Sprints</h3>
+                    <p>Organiza las iteraciones del proyecto, define fechas de inicio y cierre, y visualiza el tablero Kanban.</p>
+                </div>
+                <a href="sprints.html" class="btn-primary">Ir a Sprints</a>
+            </article>
+
+            <article class="glass-panel module-card">
+                <div>
+                    <h3>Informes y Métricas</h3>
+                    <p>Consulta indicadores clave de rendimiento (KPIs), avance porcentual y distribución de puntos por estado.</p>
+                </div>
+                <a href="informes.html" class="btn-primary">Ir a Informes</a>
+            </article>
+        </section>
+    </main>
+
+</body>
+</html>
