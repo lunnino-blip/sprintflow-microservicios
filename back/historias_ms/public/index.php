@@ -1,14 +1,14 @@
 <?php
 
-use Slim\Factory\AppFactory;
+use Slim\Factory\AppFactory; //Importa la fábrica de slim q instancia el servidor de la API
 
-require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../app/global/database_config.php';
+require __DIR__ . '/../vendor/autoload.php'; //Composer y namespaces
+require __DIR__ . '/../app/global/database_config.php'; //Ejecuta la configuración de Eloquent para la conexión 
 
-$cors = require __DIR__ . '/../app/Middlewares/cors.php';
-$historias_routers = require __DIR__ . '/../app/Presentation/Routers/endpoints.php';
+$cors = require __DIR__ . '/../app/Middlewares/cors.php'; //función de permisos CORS para que el front pueda consumir la API
+$historias_routers = require __DIR__ . '/../app/Presentation/Routers/endpoints.php'; //Carga el mapa de rutas
 
-$app = AppFactory::create();
+$app = AppFactory::create(); //Crea la aplicación principal de slim
 
 $app->addBodyParsingMiddleware();
 $app->addRoutingMiddleware();
