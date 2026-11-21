@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SprintFlow - Informes del Proyecto</title>
+    <link rel="stylesheet" href="css/styles.css?v=5">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div>
+            <div class="brand">
+                <div class="brand-logo">
+                    <svg viewBox="0 0 48 48" width="44" height="44" fill="none">
+                        <path d="M10 10L22 24L10 38" stroke="#ffb02e" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M38 10L26 24L38 38" stroke="#ff6b1a" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="brand-name">Sprint<span>Flow</span></div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    Inicio
+                </a>
+                <a href="historias.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    Historias
+                </a>
+                <a href="sprints.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Sprints
+                </a>
+                <a href="informes.html" class="nav-item active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    Informes
+                </a>
+            </nav>
+        </div>
+
+        <footer class="sidebar-footer">
+            <p class="footer-note">Gestor de Historias de Usuario</p>
+        </footer>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div class="page-title">
+                <h1>Informes del <span>Proyecto</span></h1>
+                <p>Consulta el progreso general, por responsable y por sprint.</p>
+            </div>
+            <div class="top-badges">
+                <span>Gestiona &bull; Organiza &bull; Avanza</span>
+                <span class="version-pill"><span class="version-dot"></span> v1.0</span>
+            </div>
+        </header>
+
+        <!-- Tarjetas KPI generales -->
+		<section class="stats-grid">
+			<article class="glass-panel">
+				<h3>Total de historias</h3>
+				<strong id="total-historias">0</strong>
+			</article>
+
+			<article class="glass-panel">
+				<h3>Finalizadas</h3>
+				<strong id="total-finalizadas">0</strong>
+			</article>
+
+			<article class="glass-panel">
+				<h3>Nuevas</h3>
+				<strong id="total-nuevas">0</strong>
+			</article>
+
+			<article class="glass-panel">
+				<h3>Activas</h3>
+				<strong id="total-activas">0</strong>
+			</article>
+
+			<article class="glass-panel">
+				<h3>En impedimento</h3>
+				<strong id="total-impedimentos">0</strong>
+			</article>
+
+			<article class="glass-panel">
+				<h3>Puntos estimados</h3>
+				<strong id="puntos-totales">0</strong>
+			</article>
+		</section>
+
+        <!-- Barra de progreso general -->
+		<section class="glass-panel">
+			<h2>Porcentaje de finalización</h2>
+
+			<strong id="porcentaje-finalizacion">0%</strong>
+
+			<div class="progress-bar">
+				<div id="barra-finalizacion"
+					class="progress-fill"
+					style="width: 0%"
+					role="progressbar"
+					aria-valuemin="0"
+					aria-valuemax="100"
+					aria-valuenow="0">
+				</div>
+			</div>
+		</section>
+
+        <!-- Informe por responsable -->
+		<section class="glass-panel">
+			<h2>Informe por responsable</h2>
+
+			<div class="table-container">
+				<table class="stories-table">
+					<thead>
+						<tr>
+							<th>Responsable</th>
+							<th>Total</th>
+							<th>Finalizadas</th>
+							<th>Nuevas</th>
+							<th>Activas</th>
+							<th>Impedimentos</th>
+							<th>Progreso</th>
+						</tr>
+					</thead>
+
+					<tbody id="responsables-tbody">
+						<tr>
+							<td colspan="7">Cargando información...</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+        <!-- Informe por sprint -->
+		<section class="glass-panel">
+			<h2>Informe por sprint</h2>
+
+			<div class="table-container">
+				<table class="stories-table">
+					<thead>
+						<tr>
+							<th>Sprint</th>
+							<th>Inicio</th>
+							<th>Finalización</th>
+							<th>Total</th>
+							<th>Finalizadas</th>
+							<th>Activas</th>
+							<th>Impedimentos</th>
+							<th>Progreso</th>
+						</tr>
+					</thead>
+
+					<tbody id="sprints-tbody">
+						<tr>
+							<td colspan="8">Cargando información...</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+    </main>
+
+	<script src="js/api.js"></script>
+    <script src="js/informes.js"></script>
+
+</body>
+</html>
