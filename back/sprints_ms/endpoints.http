@@ -1,12 +1,11 @@
-
 ### Consultar todos los sprints
-GET http://127.0.0.1:8001/sprints
+GET http://127.0.0.1:8002/sprints
 
 ### Consultar un sprint
-GET http://127.0.0.1:8001/sprints/1
+GET http://127.0.0.1:8002/sprints/1
 
 ### Crear un sprint
-POST http://127.0.0.1:8001/sprints
+POST http://127.0.0.1:8002/sprints
 Content-Type: application/json
 
 {
@@ -16,7 +15,7 @@ Content-Type: application/json
 }
 
 ### Actualizar un sprint
-PUT http://127.0.0.1:8001/sprints/1
+PUT http://127.0.0.1:8002/sprints/1
 Content-Type: application/json
 
 {
@@ -26,4 +25,4 @@ Content-Type: application/json
 }
 
 ### Eliminar un sprint
-DELETE http://127.0.0.1:8001/sprints/1
+DELETE http://127.0.0.1:8002/sprints/1

@@ -5,6 +5,7 @@ namespace App\Middlewares;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use Slim\Psr7\Response;
 
 class CorsMiddleware
 {
@@ -12,23 +13,23 @@ class CorsMiddleware
         ServerRequestInterface $request,
         RequestHandlerInterface $handler
     ): ResponseInterface {
+        // Responder de inmediato a la petición preflight (OPTIONS)
+        if ($request->getMethod() === 'OPTIONS') {
+            $response = new Response();
+            return $this->agregarCabecerasCors($response)->withStatus(200);
+        }
 
-        // Procesar la solicitud
+        // Procesar GET, POST, PUT, DELETE
         $response = $handler->handle($request);
 
-        // Agregar encabezados CORS
+        return $this->agregarCabecerasCors($response);
+    }
+
+    private function agregarCabecerasCors(ResponseInterface $response): ResponseInterface
+    {
         return $response
-            ->withHeader(
-                'Access-Control-Allow-Origin',
-                '*'
-            )
-            ->withHeader(
-                'Access-Control-Allow-Headers',
-                'Content-Type, Authorization, Accept'
-            )
-            ->withHeader(
-                'Access-Control-Allow-Methods',
-                'GET, POST, PUT, DELETE, OPTIONS'
-            );
+            ->withHeader('Access-Control-Allow-Origin', '*')
+            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
+            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     }
 }
