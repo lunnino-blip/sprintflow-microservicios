@@ -1,0 +1,29 @@
+
+### Consultar todos los sprints
+GET http://127.0.0.1:8001/sprints
+
+### Consultar un sprint
+GET http://127.0.0.1:8001/sprints/1
+
+### Crear un sprint
+POST http://127.0.0.1:8001/sprints
+Content-Type: application/json
+
+{
+    "nombre": "Sprint de prueba",
+    "fecha_inicio": "2026-11-20",
+    "fecha_fin": "2026-12-04"
+}
+
+### Actualizar un sprint
+PUT http://127.0.0.1:8001/sprints/1
+Content-Type: application/json
+
+{
+    "nombre": "Sprint actualizado",
+    "fecha_inicio": "2026-11-20",
+    "fecha_fin": "2026-12-10"
+}
+
+### Eliminar un sprint
+DELETE http://127.0.0.1:8001/sprints/1
